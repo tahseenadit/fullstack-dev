@@ -21,7 +21,7 @@ class RequestSample(BaseModel):
 
 
 class Response(BaseModel, Generic[T]):
-    code: str
+    code: int
     status: str
     message: str
     result: Optional[T]
