@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import './style/home.css'
 
 function HomePage() {
 
@@ -38,16 +39,18 @@ function HomePage() {
 
     return (
         <div>
-            <h1>Welcome FullStack Developers!</h1>
+            <h1>Welcome FullStack AI Developers!</h1>
 
             <form onSubmit={handleOnSubmitPrompt}>
+                <h4>Ask</h4>
                 <div style={{ marginBottom: "20px"}}>
-                    <input type="text" id="question" onChange={handleOnQuestionChange}/>
+                    <input type="text" id="question" onChange={handleOnQuestionChange} className="input-field"/>
                 </div>
 
                 <button type="submit">Generate</button>
             </form>
-            <textarea id="answer"></textarea>
+            <h4>Answer</h4>
+            <textarea id="answer" className="textarea-field"></textarea>
         </div>
     )
 }
