@@ -9,6 +9,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
+API_KEY = os.getenv("API_KEY")
+GCP_PROJECT_ID = os.getenv("GCP_PROJECT_ID")
+GCP_PROJECT_LOCATION = os.getenv("GCP_PROJECT_LOCATION")
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

@@ -8,20 +8,15 @@ from vertexai.preview.generative_models import GenerativeModel, Part
 from dotenv import load_dotenv
 from typing import Annotated
 from fastapi import APIRouter, Depends, HTTPException, Request
-from config import SessionLocal
+from config import SessionLocal, API_KEY, GCP_PROJECT_ID, GCP_PROJECT_LOCATION
 from sqlalchemy.orm import Session
 from schemas import RequestSample, Response
 from openai import OpenAI
 
-# Load environment variables from .env file
-load_dotenv()
-
-API_KEY = os.getenv("API_KEY")
 
 openai_client = OpenAI(api_key=API_KEY)
 
 router = APIRouter()
-
 
 
 def get_db():
@@ -105,7 +100,7 @@ async def vertexai_generate(request: Request):
     # Access the value of the "question" key
     question = data["question"]
 
-    vertexai.init(project="data-enablement-dp-poc", location="europe-west1")
+    vertexai.init(project=GCP_PROJECT_ID, location=GCP_PROJECT_LOCATION)
     model = GenerativeModel("gemini-1.0-pro-001")
     responses = model.generate_content(
         f"""{question}""",
