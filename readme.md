@@ -47,3 +47,13 @@ Sample Body:\n
 3. Run `npm start` in the terminal.
 4. Go to the url `http:\\localhost:3000` in your browser.
 5. Write your question in the first input area and click on Generate button.
+
+# Get VertexAI response
+
+1. Run `gcloud auth application-default login` in your terminal.
+2. Start the backend if not running.
+3. Keep the backend running.
+4. Open a new terminal and cd to frontend\my-app.
+5. Run `npm start` in the terminal.
+6. Go to the url `http:\\localhost:3000` in your browser.
+7. Write your question in the first input area and click on Generate button.

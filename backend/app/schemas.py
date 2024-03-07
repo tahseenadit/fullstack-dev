@@ -4,10 +4,6 @@ from pydantic import BaseModel, Field
 T = TypeVar('T')
 
 
-class QuestionInput(BaseModel):
-    question: str
-
-
 class SampleSchema(BaseModel):
     """Sample table schema
     """

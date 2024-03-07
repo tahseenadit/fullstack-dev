@@ -12,15 +12,15 @@ function HomePage() {
         event.preventDefault();
         setQuestion(document.getElementById("question").value);
 
-        console.log(JSON.stringify({ question }));
+        var json_data = '{ \"question\": \"' + question + '\"}'
 
         try{
-            const endpoint = "http://localhost:8000/sample/generate/";
+            const endpoint = "http://localhost:8000/sample/vertexai/generate/";
             const response = await fetch(endpoint, {
                 method: "POST",
-                body: JSON.stringify({ question }),
+                body: json_data,
                 headers: {
-                    "Content-Type": "application/json"  // Set Content-Type header here
+                    "Content-Type": "application/json" // Set Content-Type header here
                 }
             })
 
